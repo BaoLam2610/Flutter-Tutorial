@@ -30,12 +30,22 @@ class User implements Action, Fuck {
   }
 
   @override
-  void fly() {
-
-  }
+  void fly() {}
 
   @override
-  void fuck() {
+  void fuck() {}
+}
 
+class Demo {
+  final int _id;
+  final String name;
+
+  // có thể khai báo const constructor
+  Demo(this._id, this.name);
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return "id: $_id, name: $name";
   }
 }

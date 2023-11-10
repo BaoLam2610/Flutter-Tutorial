@@ -83,13 +83,14 @@ class DisableButtonWidget extends StatelessWidget {
 }
 
 class ElevatedButtonWidget extends StatelessWidget {
+
   const ElevatedButtonWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {},
-      style: TextButton.styleFrom(
+      style: ElevatedButton.styleFrom(
         backgroundColor: Colors.redAccent,
         foregroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -110,7 +111,7 @@ class OutlinedButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () {},
-      style: TextButton.styleFrom(
+      style: OutlinedButton.styleFrom(
           backgroundColor: Colors.white,
           foregroundColor: Colors.redAccent,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -118,6 +119,43 @@ class OutlinedButtonWidget extends StatelessWidget {
       child: const Text(
         "This is an outlined button!",
         style: TextStyle(fontSize: 20),
+      ),
+    );
+  }
+}
+
+class ButtonWithTextWidget extends StatefulWidget {
+
+  final String _label;
+  const ButtonWithTextWidget(this._label,{super.key});
+
+  @override
+  State<ButtonWithTextWidget> createState() => _ButtonWithTextWidgetState();
+}
+
+class _ButtonWithTextWidgetState extends State<ButtonWithTextWidget> {
+
+  late String mLabel;
+
+  @override
+  void initState() {
+    super.initState();
+    mLabel = widget._label;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.redAccent,
+          foregroundColor: Colors.white,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          shape: const StadiumBorder()
+      ),
+      child: Text(
+        mLabel,
+        style: const TextStyle(fontSize: 20),
       ),
     );
   }

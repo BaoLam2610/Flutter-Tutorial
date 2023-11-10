@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial/components/demo_button.dart';
 import 'package:tutorial/components/demo_container.dart';
+import 'package:tutorial/components/demo_row_column.dart';
+import 'package:tutorial/components/demo_sized_box.dart';
 
 import 'components/demo_text.dart';
 
@@ -18,26 +20,27 @@ void main() {
             title: const Text("This is app bar"),
             backgroundColor: Colors.cyan,
           ),
-          body: const Center(
-            child: Column(
-              children: [
-                LoadingDialog(false),
-                Text("Hello World"),
-                Counter(),
-                TextWidget(),
-                RichTextWidget(),
-                TextWithIconWidget(),
-                TextCopyWidget(),
-                CardWidget(),
-                ButtonWidget(),
-                ButtonIconWidget(),
-                DisableButtonWidget(),
-                ElevatedButtonWidget(),
-                OutlinedButtonWidget(),
-                ContainerWidget(),
-              ],
-            ),
-          ),
+          body: ColumnWidget(),
+            // SizedBoxWidget(),
+          /*const Column(
+            children: [
+              // LoadingDialog(false),
+              // Text("Hello World"),
+              // Counter(),
+              // TextWidget(),
+              // RichTextWidget(),
+              // TextWithIconWidget(),
+              // TextCopyWidget(),
+              // CardWidget(),
+              // ButtonWidget(),
+              // ButtonIconWidget(),
+              // DisableButtonWidget(),
+              // ElevatedButtonWidget(),
+              // OutlinedButtonWidget(),
+              // ContainerWidget(),
+              SizedBoxWidget(),
+            ],
+          ),*/
         ),
       ),
       debugShowCheckedModeBanner: false,

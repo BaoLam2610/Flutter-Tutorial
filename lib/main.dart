@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tutorial/components/demo_button.dart';
-import 'package:tutorial/components/demo_container.dart';
-import 'package:tutorial/components/demo_row_column.dart';
-import 'package:tutorial/components/demo_sized_box.dart';
-
-import 'components/demo_text.dart';
+import 'package:tutorial/components/demo_app_bar.dart';
+import 'package:tutorial/components/demo_row_column_expanded_flexible.dart';
+import 'package:tutorial/components/demo_stack.dart';
+import 'package:tutorial/components/demo_text_field.dart';
+import 'package:tutorial/ui/intro_screen.dart';
+import 'package:tutorial/ui/login_screen.dart';
 
 void main() {
   runApp(
@@ -12,17 +12,46 @@ void main() {
       theme: ThemeData(
         fontFamily: "InterTight", // config all text font family
       ),
-      home: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            elevation: 20,
-            centerTitle: true,
-            title: const Text("This is app bar"),
-            backgroundColor: Colors.cyan,
-          ),
-          body: ColumnWidget(),
-            // SizedBoxWidget(),
-          /*const Column(
+      home:
+          // const DemoAppBar(),
+      // const DemoUI(),
+      const DemoWidget(),
+      debugShowCheckedModeBanner: false,
+    ),
+  );
+}
+
+class DemoAppBar extends StatelessWidget {
+  const DemoAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const AppBarWidget();
+  }
+}
+
+
+class DemoWidget extends StatelessWidget {
+  const DemoWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 20,
+          centerTitle: true,
+          title: const Text("This is app bar"),
+          backgroundColor: Colors.cyan,
+        ),
+        body:
+          TextFieldWidget(),
+          // FlexibleWidget(),
+        //StackWidget(),
+        //ExpandedWidget(),
+        //ColumnWidget(),
+        // SizedBoxWidget(),
+        /*const Column(
             children: [
               // LoadingDialog(false),
               // Text("Hello World"),
@@ -41,11 +70,22 @@ void main() {
               SizedBoxWidget(),
             ],
           ),*/
-        ),
       ),
-      debugShowCheckedModeBanner: false,
-    ),
-  );
+    );
+  }
+}
+
+class DemoUI extends StatelessWidget {
+  const DemoUI({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body:
+        IntroScreen(),
+      // LoginWidget(),
+    );
+  }
 }
 
 class LoadingDialog extends StatelessWidget {

@@ -12,10 +12,9 @@ void main() {
       theme: ThemeData(
         fontFamily: "InterTight", // config all text font family
       ),
-      home:
-          // const DemoAppBar(),
+      home: const DemoAppBar(),
       // const DemoUI(),
-      const DemoWidget(),
+      // const DemoWidget(),
       debugShowCheckedModeBanner: false,
     ),
   );
@@ -26,10 +25,11 @@ class DemoAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppBarWidget();
+    return
+    //  const AppBarTabLayoutWidget();
+    const AppBarCollapseWidget();
   }
 }
-
 
 class DemoWidget extends StatelessWidget {
   const DemoWidget({super.key});
@@ -44,9 +44,8 @@ class DemoWidget extends StatelessWidget {
           title: const Text("This is app bar"),
           backgroundColor: Colors.cyan,
         ),
-        body:
-          TextFieldWidget(),
-          // FlexibleWidget(),
+        body: TextFieldWidget(),
+        // FlexibleWidget(),
         //StackWidget(),
         //ExpandedWidget(),
         //ColumnWidget(),
@@ -81,8 +80,7 @@ class DemoUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body:
-        IntroScreen(),
+      body: IntroScreen(),
       // LoginWidget(),
     );
   }
